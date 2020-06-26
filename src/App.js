@@ -21,7 +21,7 @@ const particlesParams = {
       line_linked: {
         shadow: {
           enable: true,
-          color: "#3CA9D1",
+          color: "pink",
           blur: 5
       }
     }
@@ -131,7 +131,7 @@ class App extends Component {
               <Rank name={this.state.user.name} entries={this.state.user.entries} />
               <ImageLinkForm
                 name={'Submit'}
-                description={'This magic brush will repaint your chosen pic in the Style of your favourite artist!'}
+                description={'Inset an image url into the content and style inputs. Let our magic brush do the work'}
                 onInputChange1={this.onInput1Change}
                 onInputChange2={this.onInput2Change}
                 onSubmit={this.onImageSubmit}
