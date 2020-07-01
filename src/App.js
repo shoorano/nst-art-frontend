@@ -131,7 +131,7 @@ class App extends Component {
               <Rank name={this.state.user.name} entries={this.state.user.entries} />
               <ImageLinkForm
                 name={'Submit'}
-                description={(`Insert an image url into the content and style inputs.
+                description={`Insert an image url into the content and style inputs.
                                The witness the power of AI's neural style transfer as
                                it reimagines your content in the style of your
                                favourite artist.`}
