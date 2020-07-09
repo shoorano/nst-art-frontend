@@ -132,7 +132,7 @@ class App extends Component {
               <ImageLinkForm
                 name={'Submit'}
                 description={`Insert an image url into the content and style inputs.
-                               The witness the power of AI's neural style transfer as
+                               Then witness the power of AI's neural style transfer as
                                it reimagines your content in the style of your
                                favourite artist.`}
                 onInputChange1={this.onInput1Change}
