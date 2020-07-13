@@ -21,8 +21,20 @@ class Register extends Component {
     this.setState({name: event.target.value})
   }
 
+  emailChecker = (email) => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return email.match(regex);
+  }
+
+  passwordChecker = (password) => {
+    const regex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    return password.match(regex);
+  }
+
   onSubmitRegister = () => {
-    fetch('https://shrouded-mesa-77753.herokuapp.com/register', {
+    if (this.emailChecker(this.state.email)) {
+      if (this.passwordChecker(this.state.password)) {
+        fetch('https://shrouded-mesa-77753.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -40,6 +52,12 @@ class Register extends Component {
           alert('Email is in use');
         }
     })
+      } else {
+        alert('Password must contain both upper and lowercase characters, at least one number, one special character and be at least 8 characters long.')
+      }   
+    } else {
+      alert('Please enter a valid email address.');
+    }
   }
 
   render() {
