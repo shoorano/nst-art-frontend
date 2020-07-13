@@ -27,7 +27,7 @@ class Register extends Component {
   }
 
   passwordChecker = (password) => {
-    const regex = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    const regex = /^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#.?!@$%^&*\\-_]).{8,}$/;
     return password.match(regex);
   }
 

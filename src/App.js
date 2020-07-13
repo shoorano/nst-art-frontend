@@ -6,7 +6,8 @@ import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm.js';
 import Rank from './Components/Rank/Rank.js';
 import DisplayNST from './Components/DisplayNST/DisplayNST.js';
 import SignIn from './Components/SignIn/SignIn.js';
-import Register from './Components/Register/Register.js'
+import Register from './Components/Register/Register.js';
+import NSTExample from './Components/NSTExample/NSTExample.js';
 import './App.css';
 
 const particlesParams = {
@@ -128,18 +129,16 @@ class App extends Component {
         : ( route === 'home'
            ? <div>
               <Logo />
+              <NSTExample />
               <Rank name={this.state.user.name} entries={this.state.user.entries} />
+              <DisplayNST link={this.state.link}/>
               <ImageLinkForm
                 name={'Submit'}
-                description={`Insert an image url into the content and style inputs.
-                               Then witness the power of AI's neural style transfer as
-                               it reimagines your content in the style of your
-                               favourite artist.`}
+                description={"Insert an image url into the content and style inputs. Then witness the power of AI's neural style transfer as it reimagines your content in the style of your favourite artist."}
                 onInputChange1={this.onInput1Change}
                 onInputChange2={this.onInput2Change}
                 onSubmit={this.onImageSubmit}
               />
-              <DisplayNST link={this.state.link}/>
             </div>
            : <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
          )

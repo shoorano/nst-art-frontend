@@ -1,0 +1,27 @@
+.NSTExample-div {
+    width: 520px;
+    height: 720px;
+}
+.NSTExample-img {
+    width: 450px;
+    height: 450px;
+}
+.NSTExample-caption {
+    width: 400px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .NSTExample-div {
+        width: 75%;
+        height: auto;
+    }
+    .NSTExample-img {
+        width: 70%;
+        height: auto;
+    }
+    .NSTExample-caption {
+        width: 70%;
+        height: auto;
+    }
+}

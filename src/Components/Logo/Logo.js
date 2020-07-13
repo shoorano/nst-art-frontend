@@ -1,13 +1,17 @@
 import React from 'react';
 import Tilt from 'react-tilt'
-import NST from './NST.png'
+import NST from './logo.png'
 import './Logo.css'
 
 const Logo = () => {
   return (
-    <div className='ma4 mt0'>
-    <Tilt className="Tilt br2 shadow-2" options={{ max : 60 }} style={{ height: 150, width: 150 }} >
-      <div className="Tilt-inner pa3"> <img src={NST} alt='Brush'/> </div>
+    <div className='ma4 mt0 dib flex-wrap'>
+    <Tilt className="Tilt" options={{ max : 60 }} style={{ height: 110, width: 110 }} >
+      <div className="Tilt-inner pa3">
+        <p>NST</p>
+        <img src={NST} alt='Brush'/>
+        <p>ART</p>
+      </div>
     </Tilt>
     </div>
   );
